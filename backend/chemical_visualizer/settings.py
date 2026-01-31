@@ -11,6 +11,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'jxw%3_kqee61bzpm$n4raouen7ooh&qnsx5
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
+# ALLOWED_HOSTS needs to include your backend domain
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
@@ -21,7 +22,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'corsheaders',
+    'corsheaders',  # Required for frontend-backend communication
     'api',
 ]
 
@@ -29,7 +30,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Must be above CommonMiddleware
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -58,7 +59,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'chemical_visualizer.wsgi.application'
 
 # --- DATABASE CONFIG: FORCED FALLBACK ---
-# This ignores DATABASE_URL if it's empty or just whitespace
 db_env = os.getenv('DATABASE_URL', '').strip()
 
 if db_env:
@@ -91,7 +91,13 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-CORS_ALLOW_ALL_ORIGINS = True 
+# --- CORS SETTINGS ---
+# Replace the URL below with your actual Frontend Railway URL
+CORS_ALLOWED_ORIGINS = [
+    "https://fossee-hybrid-web-desktop-application-production-34f4.up.railway.app",
+    "http://localhost:3000",
+]
+
 CORS_ALLOW_CREDENTIALS = True
 
 REST_FRAMEWORK = {
