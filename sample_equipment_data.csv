@@ -1,0 +1,21 @@
+Equipment Name,Type,Flowrate,Pressure,Temperature
+Pump-A1,Centrifugal Pump,250.5,15.2,85.3
+Heat Exchanger-HX01,Shell and Tube,180.0,12.5,120.5
+Reactor-R01,CSTR,320.8,20.0,95.0
+Distillation Column-DC01,Packed Column,210.3,8.5,110.2
+Compressor-C01,Reciprocating,400.0,25.0,75.0
+Pump-A2,Centrifugal Pump,275.2,16.0,82.1
+Cooler-CL01,Plate Heat Exchanger,190.5,10.0,65.5
+Separator-S01,Flash Drum,150.0,5.5,90.0
+Filter-F01,Bag Filter,100.2,3.0,70.0
+Mixer-M01,Static Mixer,220.0,7.5,80.5
+Pump-A3,Positive Displacement,300.0,18.5,88.0
+Dryer-D01,Rotary Dryer,130.5,4.2,150.0
+Evaporator-E01,Falling Film,240.0,9.0,105.5
+Storage Tank-T01,Vertical Tank,0.0,1.0,25.0
+Valve-V01,Control Valve,280.5,14.0,78.5
+Heater-H01,Electric Heater,170.0,11.5,200.0
+Crystallizer-CR01,Batch Crystallizer,160.5,6.5,55.0
+Turbine-T02,Steam Turbine,500.0,30.0,400.0
+Absorber-AB01,Packed Tower,200.0,8.0,95.5
+Stripper-ST01,Tray Column,185.5,7.0,100.0
