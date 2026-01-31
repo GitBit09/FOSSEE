@@ -1,26 +1,8 @@
 {
-  "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS"
   },
   "deploy": {
-    "startCommand": "npm install -g serve && serve -s build -p $PORT",
-    "restartPolicyType": "ON_FAILURE",
-    "restartPolicyMaxRetries": 10
+    "startCommand": "python manage.py migrate && gunicorn chemical_visualizer.wsgi"
   }
 }
-```
-
-#### **Step 4: Add Frontend Service to Railway**
-
-1. Go back to your Railway project
-2. Click **"New"** → **"GitHub Repo"** → Select same repository
-3. **Root Directory:** `frontend-web`
-4. **Build Command:** `npm install && npm run build`
-5. **Start Command:** `npx serve -s build -p $PORT`
-
-#### **Step 5: Add Environment Variable**
-
-In the frontend service variables:
-```
-REACT_APP_API_URL=https://your-backend-url.up.railway.app{    "build": {      "builder": "NIXPACKS"    },    "deploy": {      "startCommand": "python manage.py migrate && gunicorn chemical_visualizer.wsgi"    }  } 
