@@ -19,4 +19,4 @@ dj-database-url
 whitenoise 
 python-dotenv 
 django-cors-headers 
-"# Updated" 
+
